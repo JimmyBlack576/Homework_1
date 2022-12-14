@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Homework_1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("\tTask 1 \n");
+
+            int[] A = new int[5];
+            for(int i = 0; i < A.Length; i++)
+            {
+                A[i] = int.Parse(Console.ReadLine());
+            }
+
+            for(int i = 0; i < A.Length; i++)
+            {
+                Console.Write($" {A[i]} ");
+            }
+            Console.WriteLine($"\n {A.Max()} ");
+            Console.WriteLine(A.Min());
+            Console.WriteLine(A.Where(i=>i%2==0).Sum());
+
+
+            int[,] B = new int[3,4]; 
+
+            Random rand = new Random();
+
+            for(int i = 0; i < B.GetLength(0); i++)
+            {
+                for(int j = 0; j < B.GetLength(1); j++)
+                {
+                    B[i,j] = rand.Next(-100,100);
+                }
+            }
+
+            for (int i = 0; i < B.GetLength(0); i++)
+            {
+                for (int j = 0; j < B.GetLength(1); j++)
+                {
+                    Console.Write(B[i,j] + " ");
+                }
+                Console.WriteLine();
+            }
+            //Console.WriteLine($"\n {B.Max()} ");
+            //Console.WriteLine(B.GetEnumerator();
+            //Console.WriteLine(B.Where(i => i % 2 == 0).Sum());
+
+            Console.ReadLine();
+        }
+    }
+}
