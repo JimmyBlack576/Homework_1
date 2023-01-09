@@ -36,7 +36,7 @@ namespace Homework_1
             {
                 for(int j = 0; j < B.GetLength(1); j++)
                 {
-                    B[i,j] = rand.Next(-100,100);
+                    B[i,j] = rand.Next(-10,10);
                 }
             }
 
@@ -50,7 +50,7 @@ namespace Homework_1
             }
 
             int maxval = 0;
-            int minval = 0;
+            int minval =0;
             int sum = 0;
             int prod = 0;
             int sum_even = 0;
