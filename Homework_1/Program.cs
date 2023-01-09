@@ -23,9 +23,9 @@ namespace Homework_1
             {
                 Console.Write($" {A[i]} ");
             }
-            Console.WriteLine($"\n {A.Max()} ");
-            Console.WriteLine(A.Min());
-            Console.WriteLine(A.Where(i=>i%2==0).Sum());
+            Console.WriteLine($"\nMax: {A.Max()} ");
+            Console.WriteLine($"\nMin: {A.Min()} ");
+            Console.WriteLine($"\nSum: { A.Where(i => i % 2 == 0).Sum()}");
 
 
             int[,] B = new int[3,4]; 
@@ -44,11 +44,40 @@ namespace Homework_1
             {
                 for (int j = 0; j < B.GetLength(1); j++)
                 {
-                    Console.Write(B[i,j] + " ");
+                    Console.Write(B[i,j] + "\t");
                 }
                 Console.WriteLine();
             }
-            //Console.WriteLine($"\n {B.Max()} ");
+
+            int maxval = 0;
+            int minval = 0;
+            int sum = 0;
+            int prod = 0;
+            int sum_even = 0;
+            foreach(int i in B)
+            {
+                maxval = maxval<i ? i: maxval;
+                minval = minval>i ? i: minval;
+                sum += i;
+                prod*=i;
+            }
+
+            for (int i = 0; i < B.GetLength(0); i++)
+            {
+                for (int j = 0; j < B.GetLength(1); j++)
+                {
+                    if (j % 2 != 0)
+                    {
+                        sum_even += B[i,j];
+                    }
+                }
+                
+            }
+            Console.WriteLine($"\n Max B: {maxval} " +
+                $"\n Min B: {minval}"+
+                $"\n Sum B: {sum}" +
+                $"\n Prod B: {prod}" +
+                $"\n Sum even B: {sum_even}");
             //Console.WriteLine(B.GetEnumerator();
             //Console.WriteLine(B.Where(i => i % 2 == 0).Sum());
 
